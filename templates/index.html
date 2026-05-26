@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deteksi Depresi</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <h1>Sistem Deteksi Depresi</h1>
+        </div>
+        <div class="navbar-links">
+            <a href="#">Beranda</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-text">
+            <h2>SISTEM DETEKSI DEPRESI</h2>
+            <p>Gunakan sistem ini untuk melakukan deteksi depresi menggunakan citra wajah</p>
+            <a href="{{ url_for('detect') }}" class="btn-start">Mulai Deteksi</a>
+        </div>
+        <div class="hero-img">
+            <img src="{{ url_for('static', filename='assets/gambar_depresi.jpg') }}">
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

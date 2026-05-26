@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deteksi Depresi</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='deteksi.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <h1>Sistem Deteksi Depresi</h1>
+        </div>
+        <div class="navbar-links">
+            <a href="{{ url_for('index') }}">Beranda</a>
+        </div>
+    </nav>
+
+    <section class="upload-section">
+        <div class="container">
+            <!-- <h3 class="text-center mb-4">Unggah Gambar untuk Prediksi</h3> -->
+            <form method="POST" enctype="multipart/form-data">
+                <div class="custom-file mb-3">
+                    <input type="file" name="image" class="custom-file-input" id="file-upload" onchange="displayFileName()">
+                    <label class="custom-file-label" for="file-upload">Choose file</label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Prediksi</button>
+            </form>
+
+            <!-- Display Input Image -->
+            {% if image_path %}
+            <div class="input-image">
+                <img src="{{ url_for('static', filename=image_path) }}" alt="Gambar Input" class="img-fluid">
+            </div>
+            {% endif %}
+
+            <!-- Display Prediction Results -->
+            {% if prediction %}
+            <div class="results">
+                <h3>Hasil Prediksi</h3>
+                <div class="result-item">
+                    <label>Diagnosa:</label>
+                    <span>{{ prediction }}</span>
+                </div>
+                <div class="result-item">
+                    <label>Akurasi:</label>
+                    <span>{{ accuracy }}%</span>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Function to update file name in label
+        document.getElementById('file-upload').addEventListener('change', function(e) {
+            const fileName = e.target.files[0].name;
+            document.querySelector('.custom-file-label').textContent = fileName;
+        });
+    </script>
+</body>
+</html>

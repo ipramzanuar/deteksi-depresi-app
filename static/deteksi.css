@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Helvetica, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.navbar {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo h1 {
+    font-size: 30px;
+    color: #087cf7;
+    font-weight: bold;
+}
+
+.navbar .navbar-links a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.upload-section {
+    margin-top: 20px;
+}
+
+/* Mengatur tampilan file input */
+.custom-file-label {
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+/* Gambar input diperbesar */
+.input-image {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.input-image img {
+    width: 100%; /* Lebar gambar 100% dari container, sesuaikan jika perlu */
+    max-width: 180px; /* Maksimal lebar gambar */
+    margin-top: 20px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Teks hasil prediksi di bawah gambar, terpusat */
+.results {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.results h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.results .result-item {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.results .result-item label {
+    font-weight: bold;
+}
